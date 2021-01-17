@@ -17,3 +17,7 @@ h2 {
   margin: 0 auto;
   text-align: center;
 }
+
+.card-body {
+  border: 0.5px solid black;
+}
