@@ -19,14 +19,16 @@ function MainContainer() {
   }, [])
 
   const handleOnBuy = (boughtStock) => {
-    const updatedStocks = stocks.filter(stock => stock.id !== boughtStock.id)
-    setOwnedStocks([...ownedStocks, boughtStock])
-    setStocks(updatedStocks)
+    if (ownedStocks.includes(boughtStock)) {
+      alert("Already owned busta")
+    } else {
+      setOwnedStocks([...ownedStocks, boughtStock])
+    }
+
   }
 
   const handleOnSell = (soldStock) => {
     const updatedStocks = ownedStocks.filter(stock => stock.id !== soldStock.id)
-    setStocks([...stocks, soldStock])
     setOwnedStocks(updatedStocks)
   }
 
